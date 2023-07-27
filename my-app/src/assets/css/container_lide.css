@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.imgslider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow:hidden;
+    
+    
+}
+.image{
+    width: 100%;
+    flex-shrink: 0;
+    gap:10px;
+   
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform 0.8s ease;
+    
+   
+    
+   
+}
+.image>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+
+    
+   
+}
+.swiper-navigation{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+.swiper-navigation>.swiper-button{
+    background-color: rgb(252, 253, 253);
+    height: 50px;
+    width: 50px;
+    
+   
+    background-color: rgb(80, 82, 83);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    position: relative;
+
+}
+.swiper-navigation>.swiper-button:hover{
+    background-color: chartreuse;
+}
+.swiper-button>.i{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(0%,-50%);
+    color: aliceblue;
+}
+.image>.content{
+    width: 100%;
+    display: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+.image>.content>p{
+   
+    width:90%;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    height: 100px;
+    word-break: break-all;
+    margin: 2px;
+}
+ .image:hover .content{
+    
+   display: block;
+    padding: 5%;
+    height: 100%;
+    background-color: rgb(26, 25, 25);
+    opacity: 0.8;
+    transition: transform 1s ease-in-out;
+} 
+.image:hover .content>p {
+    transform: translateY(50%);  
+    white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide the overflowing text */
+  text-overflow: ellipsis;
+     
+
+    
+} 
+.image:hover .content>.button{
+    transform: translateY(60%);
+}
+
+.button>button{
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+    color: black;
+}
+button>a{
+    color: black;
+}
+@media (max-width: 1000px) {
+    .imgcontainer{
+        width:100%;
+        height: 400px;
+        position: relative;
+        background-color: rgb(15, 12, 12);
+    }
+    
+}
+@media (min-width:1000px) {
+    .imgcontainer{
+        width:100%;
+        aspect-ratio: 3/1;
+        position: relative;
+        background-color: rgb(15, 12, 12);
+    }
+    
+}
+
+
+
+
