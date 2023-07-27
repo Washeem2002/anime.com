@@ -143,7 +143,7 @@ const Slide=(props)=>{
           </div>
       </div>
       <div className="line"></div>
-      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={r} onTouchStart={p} onTouchMove={q} onTouchEnd={r} className="movie-container">{arr.map((item)=>
+      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={r} onTouchEnd={r} className="movie-container">{arr.map((item)=>
         <div  ref={ref2} className="movie action" >
           <div className="image2">
               <img src={item.link} alt={item.name}/>
