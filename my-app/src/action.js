@@ -61,12 +61,21 @@ const Slide=(props)=>{
     const ref=useRef();
     const ref2=useRef();
     const p=(e)=>{
+        e.preventDefault();
         setisDragging(true);
         setstartX(e.pageX-ref.current.offsetLeft);
         setscrollleft(ref.current.scrollLeft);
-        console.log(ref2.current.offsetWidth)
+        
 
     }
+    const p1=(e)=>{
+      e.preventDefault();
+      setisDragging(true);
+      setstartX(e.touches[0].clientX-ref.current.offsetLeft);
+      setscrollleft(ref.current.scrollLeft);
+      
+
+  }
     const q=(e)=>{
         if(!isDragging) return;
         e.preventDefault();
@@ -74,8 +83,19 @@ const Slide=(props)=>{
         const scroll=x-startX;
         ref.current.scrollLeft=scrollleft-scroll;
         setmove(scrollleft-scroll);
+        console.log(ref2.current.offsetWidth)
     }
-    const r=()=>{
+    const q1=(e)=>{
+      if(!isDragging) return;
+      e.preventDefault();
+      const x=e.touches[0].clientX-ref.current.offsetLeft;
+      const scroll=x-startX;
+      ref.current.scrollLeft=scrollleft-scroll;
+      setmove(scrollleft-scroll);
+      console.log(ref2.current.offsetWidth)
+  }
+    const r=(e)=>{
+        e.preventDefault();
         setisDragging(false);
         let t=0;
         if(ref.current.scrollLeft%ref2.current.offsetWidth>ref2.current.offsetWidth/2)
@@ -91,7 +111,8 @@ const Slide=(props)=>{
             behavior: 'smooth',
           });
     }
-    const s=()=>{
+    const s=(e)=>{
+        e.preventDefault();
         let t=0;
         if(ref.current.scrollLeft%ref2.current.offsetWidth>ref2.current.offsetWidth/2)
         {
@@ -143,7 +164,7 @@ const Slide=(props)=>{
           </div>
       </div>
       <div className="line"></div>
-      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={r} onTouchEnd={r} className="movie-container">{arr.map((item)=>
+      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={s} onTouchStart={p1} onTouchMove={q1} onTouchEnd={r} className="movie-container">{arr.map((item)=>
         <div  ref={ref2} className="movie action" >
           <div className="image2">
               <img src={item.link} alt={item.name}/>
