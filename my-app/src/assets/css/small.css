@@ -15,7 +15,8 @@ body{
     margin: auto;
     display: flex;
     width: 98%;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    
 }
 .movie-container::-webkit-scrollbar {
     display: none;
