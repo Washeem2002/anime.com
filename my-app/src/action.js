@@ -64,7 +64,7 @@ const Slide=(props)=>{
     const ref=useRef();
     const ref2=useRef();
     const p=(e)=>{
-        e.preventDefault();
+        
         setisDragging(true);
         setstartX(e.pageX-ref.current.offsetLeft);
         setscrollleft(ref.current.scrollLeft);
@@ -84,7 +84,7 @@ const Slide=(props)=>{
   }
     const q=(e)=>{
         if(!isDragging) return;
-        e.preventDefault();
+        
         const x=e.pageX-ref.current.offsetLeft;
         
         const scroll=x-startX;
@@ -117,7 +117,7 @@ const Slide=(props)=>{
       
   }
     const r=(e)=>{
-        e.preventDefault();
+        
         document.body.style.overflow='auto';
         setcheck(false);
         setcheck1(0);
@@ -137,7 +137,7 @@ const Slide=(props)=>{
           });
     }
     const s=(e)=>{
-        e.preventDefault();
+        
         document.body.style.overflow='auto';
         setcheck(false);
         setcheck1(0);
@@ -157,7 +157,7 @@ const Slide=(props)=>{
     }
     
     const left=(e)=>{
-        e.preventDefault();
+       
         // if(set<0)
         // {
             
@@ -171,7 +171,7 @@ const Slide=(props)=>{
 
     }
     const right=(e)=>{
-      e.preventDefault();
+      
         ref.current.scrollTo({
             left: ref.current.scrollLeft -ref2.current.offsetWidth,
             behavior: 'smooth',
