@@ -90,6 +90,21 @@ body{
     overflow: hidden;
     object-fit: cover;
     border: 5px;
+    z-index: 100;
+}
+.detail-content>.butto{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    display:flex;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    border: 5px;
+    z-index: 100;
 }
 .button>.watchbtn{
     width: 100px;
