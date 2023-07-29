@@ -72,7 +72,7 @@ const Slide=(props)=>{
 
     }
     const p1=(e)=>{
-      e.preventDefault();
+      
       setisDragging(true);
       setstartX(e.touches[0].clientX-ref.current.offsetLeft);
       setstartY(e.touches[0].clientY);
@@ -94,7 +94,7 @@ const Slide=(props)=>{
     }
     const q1=(e)=>{
       if(!isDragging) return;
-      e.preventDefault();
+      
       const x=e.touches[0].clientX-ref.current.offsetLeft;
       const y=e.touches[0].clientY;
       const scrollY=y-startY;
@@ -199,7 +199,7 @@ const Slide=(props)=>{
           </div>
           <div className="detail1">
               <div className="detail-content">
-              <div className="watchlatter" style={{color:item.w===false ?"black":"red"}} onClick={()=>{setname(item.name)}} onTouchStart={()=>{setname(item.name)}}><FontAwesomeIcon icon={faBookmark} /></div>
+              <div className="watchlatter" style={{color:item.w===false ?"black":"red"}} onClick={()=>{setname(item.name)}} ><FontAwesomeIcon icon={faBookmark} /></div>
                   <div className="title"><h3>{item.name}</h3></div>
                   <div className="button">
                        <button className="watchbtn"><Link to={`/movie/${item.name}`}>Watch</Link></button>
