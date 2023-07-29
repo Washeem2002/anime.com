@@ -58,6 +58,7 @@ body{
     display: none;
     transition: all 2s ease;
     overflow: hidden;
+    z-index: 10000;
 }
 .detail1>.detail-content{
     width: 100%;
@@ -90,22 +91,9 @@ body{
     overflow: hidden;
     object-fit: cover;
     border: 5px;
-    z-index: 100;
+    
 }
-.detail-content>.butto{
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%);
-    display:flex;
-    justify-content: center;
-    overflow: hidden;
-    object-fit: cover;
-    border: 5px;
-    z-index: 100;
-}
+
 .button>.watchbtn{
     width: 100px;
     height: 30px;
