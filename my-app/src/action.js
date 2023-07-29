@@ -5,6 +5,8 @@ import { faAngleLeft,faAngleRight,faBookmark} from "@fortawesome/free-solid-svg-
 import { Link } from "react-router-dom";
 
 const Slide=(props)=>{
+  const[check,setcheck]=useState(false);
+  const [check1,setcheck1]=useState(0);
     const [data,setdata]=useState([]);
     const [name,setname]=useState("");
 
@@ -56,6 +58,7 @@ const Slide=(props)=>{
     // }
     const [isDragging,setisDragging]=useState(false);
     const [startX,setstartX]=useState(0);
+    const [startY,setstartY]=useState(0);
     const [scrollleft,setscrollleft]=useState(0);
     const [move,setmove]=useState(0);
     const ref=useRef();
@@ -72,6 +75,9 @@ const Slide=(props)=>{
       e.preventDefault();
       setisDragging(true);
       setstartX(e.touches[0].clientX-ref.current.offsetLeft);
+      setstartY(e.touches[0].clientY);
+      console.log(startX);
+      console.log(startY)
       setscrollleft(ref.current.scrollLeft);
       
 
@@ -80,22 +86,41 @@ const Slide=(props)=>{
         if(!isDragging) return;
         e.preventDefault();
         const x=e.pageX-ref.current.offsetLeft;
+        
         const scroll=x-startX;
         ref.current.scrollLeft=scrollleft-scroll;
         setmove(scrollleft-scroll);
-        console.log(ref2.current.offsetWidth)
+        
     }
     const q1=(e)=>{
       if(!isDragging) return;
       e.preventDefault();
       const x=e.touches[0].clientX-ref.current.offsetLeft;
+      const y=e.touches[0].clientY;
+      const scrollY=y-startY;
       const scroll=x-startX;
+      setTimeout(()=>{
+        if(Math.abs(scrollY)>1.5*Math.abs(scroll) && check1===0)
+        {
+            setcheck(true);
+        }
+        setcheck1(1);
+        console.log("Asdas");
+        
+      },100)
+      if(!check)
+      {
+      document.body.style.overflow='hidden';
       ref.current.scrollLeft=scrollleft-scroll;
       setmove(scrollleft-scroll);
-      console.log(ref2.current.offsetWidth)
+      }
+      
   }
     const r=(e)=>{
         e.preventDefault();
+        document.body.style.overflow='auto';
+        setcheck(false);
+        setcheck1(0);
         setisDragging(false);
         let t=0;
         if(ref.current.scrollLeft%ref2.current.offsetWidth>ref2.current.offsetWidth/2)
@@ -113,6 +138,9 @@ const Slide=(props)=>{
     }
     const s=(e)=>{
         e.preventDefault();
+        document.body.style.overflow='auto';
+        setcheck(false);
+        setcheck1(0);
         let t=0;
         if(ref.current.scrollLeft%ref2.current.offsetWidth>ref2.current.offsetWidth/2)
         {
@@ -164,14 +192,14 @@ const Slide=(props)=>{
           </div>
       </div>
       <div className="line"></div>
-      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={s} onTouchStart={p1} onTouchMove={q1} onTouchEnd={r} className="movie-container">{arr.map((item)=>
+      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={s}  className="movie-container">{arr.map((item)=>
         <div  ref={ref2} className="movie action" >
           <div className="image2">
               <img src={item.link} alt={item.name}/>
           </div>
           <div className="detail1">
               <div className="detail-content">
-              <div className="watchlatter" style={{color:item.w===false ?"black":"red"}} onClick={()=>{setname(item.name)}}><FontAwesomeIcon icon={faBookmark} /></div>
+              <div className="watchlatter" style={{color:item.w===false ?"black":"red"}} onClick={()=>{setname(item.name)}} onTouchStart={()=>{setname(item.name)}}><FontAwesomeIcon icon={faBookmark} /></div>
                   <div className="title"><h3>{item.name}</h3></div>
                   <div className="button">
                        <button className="watchbtn"><Link to={`/movie/${item.name}`}>Watch</Link></button>
