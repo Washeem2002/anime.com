@@ -2,14 +2,14 @@ import React, { useEffect, useState,useRef } from "react";
 import "./assets/css/small.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft,faAngleRight,faBookmark} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 const Slide=(props)=>{
   const[check,setcheck]=useState(false);
   const [check1,setcheck1]=useState(0);
     const [data,setdata]=useState([]);
     const [name,setname]=useState("");
-
+    
     
     useEffect(()=>{
          fetch(`${process.env.REACT_APP_BASE_URL}/post`,{
@@ -178,6 +178,8 @@ const Slide=(props)=>{
           });
 
     }
+    const navigate= useNavigate();
+    
    
    
     return (
@@ -192,7 +194,7 @@ const Slide=(props)=>{
           </div>
       </div>
       <div className="line"></div>
-      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={s}  className="movie-container">{arr.map((item)=>
+      <div ref={ref} onMouseDown={p} onMouseMove={q} onMouseUp={r} onMouseLeave={s} onTouchStart={p1} onTouchMove={q1} onTouchEnd={r} className="movie-container">{arr.map((item)=>
         <div  ref={ref2} className="movie action" >
           <div className="image2">
               <img src={item.link} alt={item.name}/>
@@ -202,7 +204,7 @@ const Slide=(props)=>{
               <div className="watchlatter" style={{color:item.w===false ?"black":"red"}} onClick={()=>{setname(item.name)}} ><FontAwesomeIcon icon={faBookmark} /></div>
                   <div className="title"><h3>{item.name}</h3></div>
                   <div className="button">
-                       <button className="watchbtn"><Link to={`/movie/${item.name}`}>Watch</Link></button>
+                       <button className="watchbtn" onClick={()=>{navigate(`/movie/${item.name}`)}}>Watch</button>
                   </div>
               </div>
           </div>
