@@ -17,6 +17,7 @@ body{
     width: 98%;
     overflow-x: hidden;
     
+    
 }
 .movie-container::-webkit-scrollbar {
     display: none;
