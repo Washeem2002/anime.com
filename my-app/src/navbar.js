@@ -66,7 +66,7 @@ const Navbar=()=>{
         </header>
         
 
-        
+         <div className="exam"></div>
         </>)
 }
 export default Navbar

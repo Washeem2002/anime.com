@@ -24,8 +24,6 @@ const App=()=>{
           <Route path="/movie/:id" element={<Movie/>}></Route>
           <Route path="/genre/:id" element={<Genre/>}></Route>
           <Route path="/search" element={<Search/>}></Route>
-          
-          
         </Routes>
         </Router>
     </>
