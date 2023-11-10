@@ -5,10 +5,17 @@
 header{
    
     height: 70px;
-    position: relative;
+    
+    position: fixed;
+    z-index: 100;
+    width: 100%;
     background-color: black;
     color: white;
     
+}
+.exam{
+    height: 70px;
+    width: 100%;
 }
 .logo>Link{
     text-decoration: none; /* Remove the underline */

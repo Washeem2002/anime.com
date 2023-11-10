@@ -189,8 +189,8 @@ const Slide=(props)=>{
       <div className="genra">
           <div className="genra-title"><Link to={`/genre/${props.name}`}>{props.name}</Link></div>
           <div className="button-container">
-              <button className="watchbtn2" onClick={left}><FontAwesomeIcon icon={faAngleLeft} className="i" /></button>
-              <button className="watchbtn2" onClick={right}><FontAwesomeIcon icon={faAngleRight} className="i" /></button>
+              <button className="watchbtn2" onClick={right}><FontAwesomeIcon icon={faAngleLeft} className="i" /></button>
+              <button className="watchbtn2" onClick={left}><FontAwesomeIcon icon={faAngleRight} className="i" /></button>
           </div>
       </div>
       <div className="line"></div>
