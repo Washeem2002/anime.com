@@ -32,7 +32,7 @@ const Movie=()=>{
    <div className="video-container">
       <div className="video">
         
-            <iframe src={anime.vid}></iframe>
+            <iframe src={anime.vid} allowfullscreen></iframe>
         
        
       </div> 
