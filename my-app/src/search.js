@@ -10,7 +10,7 @@ const Search=()=>{
     const [Query,setQuery]=useState("");
     const [data,setdata]=useState([]);
     useEffect(()=>{
-      fetch(`${process.env.REACT_APP_BASE_URL}/api`).then((res)=>{return res.json()}).then((data)=>{setdata(data)});
+      fetch("/api").then((res)=>{return res.json()}).then((data)=>{setdata(data)});
     })
     
  return(
