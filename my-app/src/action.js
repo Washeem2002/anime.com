@@ -12,7 +12,7 @@ const Slide=(props)=>{
     
     
     useEffect(()=>{
-         fetch(`${process.env.REACT_APP_BASE_URL}/post`,{
+         fetch(`/post`,{
             method:"POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({name:name})
@@ -20,7 +20,7 @@ const Slide=(props)=>{
          return ()=>{setname("")};
     },[name])
     useEffect(()=>{
-        fetch(`${process.env.REACT_APP_BASE_URL}/api`).then((res)=>{
+        fetch("/api").then((res)=>{
             return res.json();
         }).then((data)=>{setdata(data)});
         
