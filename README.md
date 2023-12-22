@@ -1,4 +1,4 @@
-﻿# game-project
+﻿# Anime.com
 Website_Link(Vercel):https://anime-com.vercel.app/
 
 # tech Stack used
