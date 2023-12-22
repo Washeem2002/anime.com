@@ -1,22 +1,26 @@
-## Getting Started
+﻿# game-project
+Wesite_Link(Render):https://game-cart-ojg7.onrender.com<br>
+Website_Link(Vercel):https://game-cart-ojg7.onrender.com
 
-### Clone the Repo
+# tech Stack used
+<ul>
+  <li>React js</li>
+  <li>Node js</li>
+  <li>Express js</li>
+  <li>Css</li>
+  
+</ul>
 
-```
-git clone git@github.com:Washeem2002/anime.com.git
-npm install
-```
+# Feature
+<ul>
+ <li>Searching Anime</li>
+ <li>Adding to Watchlatter</li>
+ <li>Streaming the anime</li>
+ <li>Feltering Anime besed on <b>Genre</b></li>
+ <li>Feltering the game by <i>Dub,Sub,Dub and sub both</i></li>
 
-### Start the App
+  
+</ul>
 
-Make sure your PostgreSQL database on and do some db configuration on `knexfile.js`.
-
-For preview or production, do:
-
-```
-npm start
-make sure to change it to loclal host
-```
-### This web-app is also deployed on 
-   https://anime-war.onrender.com/
-
+ <br>
+ <h1>Pleace give an star if you like the project</h1>
