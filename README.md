@@ -1,6 +1,5 @@
 ﻿# game-project
-Wesite_Link(Render):https://game-cart-ojg7.onrender.com<br>
-Website_Link(Vercel):https://game-cart-ojg7.onrender.com
+Website_Link(Vercel):https://anime-com.vercel.app/
 
 # tech Stack used
 <ul>
