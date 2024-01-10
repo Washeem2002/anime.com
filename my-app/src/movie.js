@@ -4,6 +4,8 @@ import "./assets/css/video.css";
 import Comp from "./grid";
 import { Link } from "react-router-dom";
 import { faFilter,faBookmark} from "@fortawesome/free-solid-svg-icons";
+import ReactPlayer from "react-player";
+
 const Movie=()=>{
     const {id}=useParams();
     const [anime,setanime]=useState([]);
@@ -32,7 +34,9 @@ const Movie=()=>{
    <div className="video-container">
       <div className="video">
         
-            <iframe src={anime.vid} allowfullscreen></iframe>
+            {/* <iframe src={anime.vid} allowfullscreen></iframe> */}
+            <ReactPlayer url={anime.vid} controls={true} width='100%'
+          height='100%' />
         
        
       </div> 
